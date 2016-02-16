@@ -1,0 +1,9 @@
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\bin\Debug\TwotoOne.exe.config
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\bin\Debug\TwotoOne.exe
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\bin\Debug\TwotoOne.pdb
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\obj\Debug\TwotoOne.csprojResolveAssemblyReference.cache
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\obj\Debug\TwotoOne.Form1.resources
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\obj\Debug\TwotoOne.Properties.Resources.resources
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\obj\Debug\TwotoOne.csproj.GenerateResource.Cache
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\obj\Debug\TwotoOne.exe
+C:\Users\Greg\Documents\Polytech\3rd Year\OOSD\TwotoOne\TwotoOne\obj\Debug\TwotoOne.pdb
