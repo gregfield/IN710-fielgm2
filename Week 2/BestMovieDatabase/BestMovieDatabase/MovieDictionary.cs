@@ -33,6 +33,8 @@ namespace BestMovieDatabase
         //adds a movie to the dictionary
         public void addMovie(int year, string title, string director)
         {
+            try
+            {
                 //if the year is either to high or too small it will show an error message
                 if ((year < 2020) && (year > 1900))
                 {
@@ -48,17 +50,22 @@ namespace BestMovieDatabase
                         else
                         {
                             MessageBox.Show("Please enter a Director");
-                        } 
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Please enter a Title");
-                    }                    
+                    }
                 }
                 else
                 {
                     MessageBox.Show("That is not a valid Year");
                 }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("There is already a movie from that Year");
+            }
         }
 
         //deletes a movie based on the year
