@@ -73,7 +73,7 @@ namespace StackAndUnitTesting
 
             if(isEmpty() == true)
             {
-                return "Nothing to peek at. The Stack is Empty";
+                throw new Exception("Nothing to Peek at. Stack is empty");
             }
             else
             {
