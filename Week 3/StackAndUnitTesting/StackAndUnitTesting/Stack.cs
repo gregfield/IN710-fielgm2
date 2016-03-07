@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StackAndUnitTesting
 {
-    class Stack
+    public class Stack
     {
         //Linked list pointers
         StringNode head;
