@@ -31,7 +31,16 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //=======================================================================
         public List<Critter> CritterQuery(string speciesName)
         {
-            throw new NotImplementedException();
+            List<Critter> citterMatches = new List<Critter>();
+
+            foreach (Critter critter in critterList)
+            {
+                if ((ESpecies)System.Enum.Parse(typeof(ESpecies), speciesName) == critter.Species)
+                {
+                    citterMatches.Add(critter);
+                }
+            }
+            return citterMatches;
         }
 
 
