@@ -6,8 +6,23 @@ using System.Windows.Forms;
 
 namespace IN710_4._1_Animal_Shelter_Solution_2014
 {
-    class TextDisplay: IDisplay
+    public class TextDisplay: IDisplay
     {
-        /* YOUR CODE HERE */
+        public static ListBox ShowCritterListBox;
+
+        public TextDisplay(ListBox listbox)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void displayCritterList(List<Critter> critterList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void clearDisplay()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -31,8 +31,7 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //=======================================================================
         public List<Critter> CritterQuery(string speciesName)
         {
-            /* YOUR CODE HERE */
-            throw new NotImplementedException();    // Remove after you write the method
+            throw new NotImplementedException();
         }
 
 
