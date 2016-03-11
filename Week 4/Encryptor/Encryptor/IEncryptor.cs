@@ -9,5 +9,6 @@ namespace Encryptor
     public interface IEncryptor
     {
         string EncryptString(string stringToEncrypt);
+        string DecryptString(string stringToDecrypt);
     }
 }

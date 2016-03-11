@@ -19,6 +19,7 @@ namespace Encryptor
 
         private void encryptBtn_Click(object sender, EventArgs e)
         {
+            Encryptor newEncryption = new Encryptor();
             string input = InputTextBox.Text;
             //checks there is something to encrypt
             if (input != "")
@@ -26,14 +27,15 @@ namespace Encryptor
                 //if rot13
                 if (rdbtnROT13.Checked)
                 {
-                    ROT13Encryptor encryptor = new ROT13Encryptor();
-                    OutputTextBox.Text = encryptor.EncryptString(input);
+                    newEncryption.encryption = new ROT13Encryptor();
+                    OutputTextBox.Text = newEncryption.EncryptInputText(input);
+
                 }
                 //if reverse string
                 else if (rdbtnReverse.Checked)
                 {
-                    ReverseString encryptor = new ReverseString();
-                    OutputTextBox.Text = encryptor.EncryptString(input);
+                    newEncryption.encryption = new ReverseString();
+                    OutputTextBox.Text = newEncryption.EncryptInputText(input);
                 }
                 //if neither selected
                 else
@@ -44,7 +46,40 @@ namespace Encryptor
             }
             else
             {
-                MessageBox.Show("Please enter text to convert!");
+                MessageBox.Show("Please enter text to encrypt!");
+            }
+        }
+
+        private void decryptBtn_Click(object sender, EventArgs e)
+        {
+            Encryptor newDecryption = new Encryptor();
+            string input = InputTextBox.Text;
+            //checks there is something to encrypt
+            if (input != "")
+            {
+                //if rot13
+                if (rdbtnROT13.Checked)
+                {
+                    newDecryption.encryption = new ROT13Encryptor();
+                    OutputTextBox.Text = newDecryption.DecryptInputText(input);
+
+                }
+                //if reverse string
+                else if (rdbtnReverse.Checked)
+                {
+                    newDecryption.encryption = new ReverseString();
+                    OutputTextBox.Text = newDecryption.DecryptInputText(input);
+                }
+                //if neither selected
+                else
+                {
+                    MessageBox.Show("Please select an encryption type!");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter text to Decrypt!");
             }
         }
     }

@@ -43,5 +43,40 @@ namespace Encryptor
             string encrypted = new string(charArrayToEncrypt);
             return encrypted;
         }
+        public string DecryptString(string stringToDecrypt)
+        {
+            //convert to char so can move forward
+            char[] charArrayToDecrypt = stringToDecrypt.ToCharArray();
+            for (int i = 0; i < charArrayToDecrypt.Length; i++)
+            {
+                int charint = charArrayToDecrypt[i];
+                //makes sure it stays in the alphabet
+                if (charint >= 'A' && charint <= 'Z')
+                {
+                    if (charint > 'M')
+                    {
+                        charint = charint + 13;
+                    }
+                    else
+                    {
+                        charint = charint - 13;
+                    }
+                }
+                else
+                {
+                    if (charint > 'm')
+                    {
+                        charint = charint + 13;
+                    }
+                    else
+                    {
+                        charint = charint - 13;
+                    }
+                }
+                charArrayToDecrypt[i] = (char)charint;
+            }
+            string decrypted= new string(charArrayToDecrypt);
+            return decrypted;
+        }
     }
 }

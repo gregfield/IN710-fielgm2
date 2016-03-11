@@ -16,5 +16,13 @@ namespace Encryptor
             string encrypted = new string(charArrayToReverse);
             return encrypted;
         }
+        public string DecryptString(string stringToReverse)
+        {
+            char[] charArrayToReverse = stringToReverse.ToCharArray();
+            //reverses the string
+            Array.Reverse(charArrayToReverse);
+            string decrypted = new string(charArrayToReverse);
+            return decrypted;
+        }
     }
 }

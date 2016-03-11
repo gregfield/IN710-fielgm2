@@ -35,6 +35,7 @@
             this.outputLabel = new System.Windows.Forms.Label();
             this.InputTextBox = new System.Windows.Forms.TextBox();
             this.OutputTextBox = new System.Windows.Forms.TextBox();
+            this.decryptBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rdbtnROT13
@@ -101,11 +102,22 @@
             this.OutputTextBox.Size = new System.Drawing.Size(279, 22);
             this.OutputTextBox.TabIndex = 6;
             // 
+            // decryptBtn
+            // 
+            this.decryptBtn.Location = new System.Drawing.Point(445, 84);
+            this.decryptBtn.Name = "decryptBtn";
+            this.decryptBtn.Size = new System.Drawing.Size(75, 34);
+            this.decryptBtn.TabIndex = 7;
+            this.decryptBtn.Text = "Decrypt";
+            this.decryptBtn.UseVisualStyleBackColor = true;
+            this.decryptBtn.Click += new System.EventHandler(this.decryptBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 456);
+            this.Controls.Add(this.decryptBtn);
             this.Controls.Add(this.OutputTextBox);
             this.Controls.Add(this.InputTextBox);
             this.Controls.Add(this.outputLabel);
@@ -129,6 +141,7 @@
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.TextBox InputTextBox;
         private System.Windows.Forms.TextBox OutputTextBox;
+        private System.Windows.Forms.Button decryptBtn;
     }
 }
 
