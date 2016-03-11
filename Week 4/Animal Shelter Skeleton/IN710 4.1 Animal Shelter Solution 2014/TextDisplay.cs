@@ -12,17 +12,20 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
 
         public TextDisplay(ListBox listbox)
         {
-            throw new NotImplementedException();
+            ShowCritterListBox = listbox;
         }
 
         public void displayCritterList(List<Critter> critterList)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < critterList.Count; i++)
+            {
+                ShowCritterListBox.Items.Add(critterList[i].Name + " the " + critterList[i].Species);
+            }
         }
 
         public void clearDisplay()
         {
-            throw new NotImplementedException();
+            ShowCritterListBox.Items.Clear();
         }
     }
 }
