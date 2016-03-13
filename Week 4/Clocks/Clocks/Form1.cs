@@ -32,7 +32,7 @@ namespace Clocks
         private void stopBtn_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            clock.clockType.ClockOff();
+            clock.stopClock();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
