@@ -72,8 +72,6 @@
             this.rbtnDigital.TabIndex = 2;
             this.rbtnDigital.TabStop = true;
             this.rbtnDigital.Text = "Digital Clock";
-            this.rbtnDigital.UseVisualStyleBackColor = true;
-            this.rbtnDigital.CheckedChanged += new System.EventHandler(this.rbtnDigital_CheckedChanged);
             // 
             // rbtnAnalog
             // 
@@ -86,7 +84,6 @@
             this.rbtnAnalog.TabStop = true;
             this.rbtnAnalog.Text = "Analog Clock";
             this.rbtnAnalog.UseVisualStyleBackColor = true;
-            this.rbtnAnalog.CheckedChanged += new System.EventHandler(this.rbtnAnalog_CheckedChanged);
             // 
             // analogClock1
             // 
@@ -114,6 +111,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel1
             // 
