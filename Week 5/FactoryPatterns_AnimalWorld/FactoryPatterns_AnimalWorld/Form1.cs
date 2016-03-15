@@ -19,11 +19,13 @@ namespace FactoryPatterns_AnimalWorld
     {
         private const int NAUSTRALIAN_ANIMALS = 4;
         private const int NNORTHAMERICAN_ANIMALS = 4;
+        private const int ASIAN_ANIMALS = 3;
 
         Graphics canvas;
 
         Continent Australia;
         Continent NorthAmerica;
+        Continent Asia;
 
         public Form1()
         {
@@ -32,6 +34,7 @@ namespace FactoryPatterns_AnimalWorld
 
             Australia = new Australian(displayAnimalInfo, canvas, NAUSTRALIAN_ANIMALS);
             NorthAmerica = new NorthAmerica(displayAnimalInfo, canvas, NNORTHAMERICAN_ANIMALS);
+            Asia = new Asia(displayAnimalInfo, canvas, ASIAN_ANIMALS);
 
         }
 
@@ -45,6 +48,12 @@ namespace FactoryPatterns_AnimalWorld
         {
             displayAnimalInfo.Items.Clear();
             NorthAmerica.runSimulation();
+        }
+
+        private void AsiaBtn_Click(object sender, EventArgs e)
+        {
+            displayAnimalInfo.Items.Clear();
+            Asia.runSimulation();
         }
     }
 }

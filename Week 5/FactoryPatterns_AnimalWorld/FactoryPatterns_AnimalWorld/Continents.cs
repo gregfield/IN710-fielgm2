@@ -28,5 +28,14 @@ namespace FactoryPatterns_AnimalWorld
         {
             animalFactory = new NorthAmericanAnimalFactory();
         }
-    }   
+    }
+
+    public class Asia : Continent
+    {
+        public Asia(ListBox displayBox, Graphics canvas, int nAnimalTypes)
+            : base(displayBox, canvas, nAnimalTypes)
+        {
+            animalFactory = new AsianAnimalFactory();
+        }
+    }
 }

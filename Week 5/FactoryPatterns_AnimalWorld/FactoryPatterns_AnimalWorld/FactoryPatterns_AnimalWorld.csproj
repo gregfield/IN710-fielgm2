@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Animal.cs" />
     <Compile Include="AnimalFactories.cs" />
+    <Compile Include="AsiaAnimals.cs" />
     <Compile Include="NorthAmericanAnimals.cs" />
     <Compile Include="AustralianAnimals.cs" />
     <Compile Include="Continent.cs" />
