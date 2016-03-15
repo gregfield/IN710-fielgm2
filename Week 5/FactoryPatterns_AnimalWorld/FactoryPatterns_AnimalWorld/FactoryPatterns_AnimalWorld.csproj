@@ -45,8 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="Animals.cs" />
+    <Compile Include="AnimalFactories.cs" />
+    <Compile Include="NorthAmericanAnimals.cs" />
+    <Compile Include="AustralianAnimals.cs" />
     <Compile Include="Continent.cs" />
+    <Compile Include="Continents.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

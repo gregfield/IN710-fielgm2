@@ -28,22 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AnimalInfo = new System.Windows.Forms.RichTextBox();
             this.AUSBtn = new System.Windows.Forms.Button();
             this.NorthABtn = new System.Windows.Forms.Button();
+            this.displayAnimalInfo = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // AnimalInfo
-            // 
-            this.AnimalInfo.Location = new System.Drawing.Point(294, 25);
-            this.AnimalInfo.Name = "AnimalInfo";
-            this.AnimalInfo.Size = new System.Drawing.Size(511, 421);
-            this.AnimalInfo.TabIndex = 0;
-            this.AnimalInfo.Text = "";
             // 
             // AUSBtn
             // 
-            this.AUSBtn.Location = new System.Drawing.Point(319, 474);
+            this.AUSBtn.Location = new System.Drawing.Point(249, 474);
             this.AUSBtn.Name = "AUSBtn";
             this.AUSBtn.Size = new System.Drawing.Size(172, 49);
             this.AUSBtn.TabIndex = 1;
@@ -53,7 +45,7 @@
             // 
             // NorthABtn
             // 
-            this.NorthABtn.Location = new System.Drawing.Point(599, 474);
+            this.NorthABtn.Location = new System.Drawing.Point(569, 474);
             this.NorthABtn.Name = "NorthABtn";
             this.NorthABtn.Size = new System.Drawing.Size(172, 49);
             this.NorthABtn.TabIndex = 2;
@@ -61,14 +53,23 @@
             this.NorthABtn.UseVisualStyleBackColor = true;
             this.NorthABtn.Click += new System.EventHandler(this.NorthABtn_Click);
             // 
+            // displayAnimalInfo
+            // 
+            this.displayAnimalInfo.FormattingEnabled = true;
+            this.displayAnimalInfo.ItemHeight = 16;
+            this.displayAnimalInfo.Location = new System.Drawing.Point(249, 22);
+            this.displayAnimalInfo.Name = "displayAnimalInfo";
+            this.displayAnimalInfo.Size = new System.Drawing.Size(492, 420);
+            this.displayAnimalInfo.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 548);
+            this.ClientSize = new System.Drawing.Size(773, 553);
+            this.Controls.Add(this.displayAnimalInfo);
             this.Controls.Add(this.NorthABtn);
             this.Controls.Add(this.AUSBtn);
-            this.Controls.Add(this.AnimalInfo);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -77,9 +78,9 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox AnimalInfo;
         private System.Windows.Forms.Button AUSBtn;
         private System.Windows.Forms.Button NorthABtn;
+        private System.Windows.Forms.ListBox displayAnimalInfo;
     }
 }
 

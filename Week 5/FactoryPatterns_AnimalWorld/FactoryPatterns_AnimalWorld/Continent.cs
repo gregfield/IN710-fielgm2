@@ -13,25 +13,37 @@ namespace FactoryPatterns_AnimalWorld
     //=====================================================
     public abstract class Continent
     {
+        //number of animals displayed on the screen
         public const int ANIMAL_COUNT = 4;
 
-        protected RichTextBox displayBox;
+        protected ListBox displayBox;
         protected Random randomGen;
-        protected int nAnimalTypes;
+        protected int nAminalTypes;
         protected Graphics canvas;
         protected IAnimalFactory animalFactory;
 
-        public Continent(RichTextBox displayBox, Random randomGen, int nAnimalTypes, Graphics canvas)
+        public Continent(ListBox displayBox, Graphics canvas, int nAnimalTypes)
         {
             this.displayBox = displayBox;
-            this.randomGen = randomGen;
-            this.nAnimalTypes = nAnimalTypes;
             this.canvas = canvas;
+            this.nAminalTypes = nAnimalTypes;
+            randomGen = new Random();
         }
-
+        
+        //creats new animals and displays pictures anfd info to screen
         public void runSimulation()
         {
+            Animal currentAnimal;
 
+            for (int i = 0; i < ANIMAL_COUNT; i++)
+            {
+                int animalChoice = randomGen.Next(nAminalTypes);
+
+                currentAnimal = animalFactory.createAnimal(animalChoice);
+
+                displayBox.Items.Add(currentAnimal.ToString());
+                canvas.DrawImage(currentAnimal.image, 40, 10 + (i * 110), 100, 100);
+            }
         }
     }
 }
