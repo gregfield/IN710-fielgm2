@@ -28,5 +28,10 @@ namespace FactoryPatterns_AnimalWorld
             this.nAnimalTypes = nAnimalTypes;
             this.canvas = canvas;
         }
+
+        public void runSimulation()
+        {
+
+        }
     }
 }
