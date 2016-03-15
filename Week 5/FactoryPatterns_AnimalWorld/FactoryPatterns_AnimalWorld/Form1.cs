@@ -17,8 +17,8 @@ namespace FactoryPatterns_AnimalWorld
 {
     public partial class Form1 : Form
     {
-        private const int NAUSTRALIAN_ANIMALS = 3;
-        private const int NNORTHAMERICAN_ANIMALS = 3;
+        private const int NAUSTRALIAN_ANIMALS = 4;
+        private const int NNORTHAMERICAN_ANIMALS = 4;
 
         Graphics canvas;
 

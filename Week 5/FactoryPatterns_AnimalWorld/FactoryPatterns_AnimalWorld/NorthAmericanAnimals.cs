@@ -44,4 +44,15 @@ namespace FactoryPatterns_AnimalWorld
             image = new Bitmap("images/eagle.jpg");
         }
     }
+
+    public class Groundhog : Animal
+    {
+        public Groundhog()
+        {
+            name = "Groundhog";
+            family = "Herbivore";
+            food = "Grass";
+            image = new Bitmap("images/groundhog.png");
+        }
+    }
 }

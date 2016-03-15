@@ -33,6 +33,7 @@ namespace FactoryPatterns_AnimalWorld
             image = new Bitmap("images/crocodile.jpg");
         }
     }
+
     public class Kangaroo : Animal
     {
         public Kangaroo()
@@ -41,6 +42,17 @@ namespace FactoryPatterns_AnimalWorld
             family = "Herbivore";
             food = "Grass";
             image = new Bitmap("images/kangaroo.jpg");
+        }
+    }
+
+    public class TasmanianDevil : Animal
+    {
+        public TasmanianDevil()
+        {
+            name = "Tasmanian Devil";
+            family = "Carnivore";
+            food = "Wombat";
+            image = new Bitmap("images/tasmaniandevil.jpg");
         }
     }
 }
