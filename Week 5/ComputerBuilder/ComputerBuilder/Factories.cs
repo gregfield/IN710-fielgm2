@@ -22,6 +22,10 @@ namespace ComputerBuilder
         {
             return new BusinessRAM();
         }
+        public Monitor makeMonitor()
+        {
+            return new BusinessMonitor();
+        }
     }
     public class MultimediaComputerFactory : IComponentFactory
     {
@@ -37,6 +41,10 @@ namespace ComputerBuilder
         public RAM makeRam()
         {
             return new MultimediaRAM();
+        }
+        public Monitor makeMonitor()
+        {
+            return new MultimediaMonitor();
         }
     }
     public class GamingComputerFactory : IComponentFactory
@@ -54,5 +62,32 @@ namespace ComputerBuilder
         {
             return new GamingRAM();
         }
+        public Monitor makeMonitor()
+        {
+            return new GamingMonitor();
+        }
     }
+    public class LaptopFactory : IComponentFactory
+    {
+        public CPU makeCPU()
+        {
+            return new LaptopCPU();
+        }
+
+        public GPU makeGPU()
+        {
+            return new LaptopGPU();
+        }
+
+        public RAM makeRam()
+        {
+            return new LaptopRAM();
+        }
+
+        public Monitor makeMonitor()
+        {
+            return new LaptopMonitor();
+        }
+    }
+
 }

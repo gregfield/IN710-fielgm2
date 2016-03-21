@@ -126,6 +126,7 @@
             this.makeMonsterBtn.TabIndex = 9;
             this.makeMonsterBtn.Text = "Make Monster";
             this.makeMonsterBtn.UseVisualStyleBackColor = true;
+            this.makeMonsterBtn.Click += new System.EventHandler(this.makeMonsterBtn_Click);
             // 
             // Form1
             // 

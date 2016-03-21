@@ -28,9 +28,13 @@ namespace ComputerBuilder
             {
                 newMachine = new MultimediaComputerFactory();
             }
-            else
+            else if(gmaeRbtn.Checked)
             {
                 newMachine = new GamingComputerFactory();
+            }
+            else
+            {
+                newMachine = new LaptopFactory();
             }
 
             SpecPrinter currSpecPrinter = new SpecPrinter(newMachine, displaySpecBox);

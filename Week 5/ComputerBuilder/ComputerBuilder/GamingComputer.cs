@@ -31,4 +31,12 @@ namespace ComputerBuilder
             name = "8Gb DDR3 RAM";
         }
     }
+    public class GamingMonitor : Monitor
+    {
+        public GamingMonitor()
+        {
+            price = 300;
+            name = "4k 26 inch";
+        }
+    }
 }

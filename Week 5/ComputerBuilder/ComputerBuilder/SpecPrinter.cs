@@ -23,8 +23,9 @@ namespace ComputerBuilder
             CPU currCPU = componentFactory.makeCPU();
             GPU currGPU = componentFactory.makeGPU();
             RAM currRAM = componentFactory.makeRam();
+            Monitor currMonitor = componentFactory.makeMonitor();
 
-            double totalPrice = currCPU.Price + currGPU.Price + currRAM.Price;
+            double totalPrice = currCPU.Price + currGPU.Price + currRAM.Price + currMonitor.Price;
 
             displayBox.Items.Clear();
             displayBox.Items.Add("Price\tComponent");
@@ -33,6 +34,7 @@ namespace ComputerBuilder
             displayBox.Items.Add(currCPU.ToString());
             displayBox.Items.Add(currGPU.ToString());
             displayBox.Items.Add(currRAM.ToString());
+            displayBox.Items.Add(currMonitor.ToString());
 
             displayBox.Items.Add("----------------------------------");
             displayBox.Items.Add("Total Price: $" + totalPrice.ToString());

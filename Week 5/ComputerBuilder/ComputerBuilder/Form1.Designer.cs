@@ -31,9 +31,10 @@
             this.displaySpecBox = new System.Windows.Forms.ListBox();
             this.printSpecsBtn = new System.Windows.Forms.Button();
             this.rbtnGroup = new System.Windows.Forms.GroupBox();
-            this.businessRbtn = new System.Windows.Forms.RadioButton();
-            this.MultiRbtn = new System.Windows.Forms.RadioButton();
             this.gmaeRbtn = new System.Windows.Forms.RadioButton();
+            this.MultiRbtn = new System.Windows.Forms.RadioButton();
+            this.businessRbtn = new System.Windows.Forms.RadioButton();
+            this.laptopRbtn = new System.Windows.Forms.RadioButton();
             this.rbtnGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.displaySpecBox.ItemHeight = 16;
             this.displaySpecBox.Location = new System.Drawing.Point(267, 21);
             this.displaySpecBox.Name = "displaySpecBox";
-            this.displaySpecBox.Size = new System.Drawing.Size(369, 228);
+            this.displaySpecBox.Size = new System.Drawing.Size(369, 260);
             this.displaySpecBox.TabIndex = 0;
             // 
             // printSpecsBtn
@@ -58,37 +59,16 @@
             // 
             // rbtnGroup
             // 
+            this.rbtnGroup.Controls.Add(this.laptopRbtn);
             this.rbtnGroup.Controls.Add(this.gmaeRbtn);
             this.rbtnGroup.Controls.Add(this.MultiRbtn);
             this.rbtnGroup.Controls.Add(this.businessRbtn);
             this.rbtnGroup.Location = new System.Drawing.Point(12, 80);
             this.rbtnGroup.Name = "rbtnGroup";
-            this.rbtnGroup.Size = new System.Drawing.Size(220, 172);
+            this.rbtnGroup.Size = new System.Drawing.Size(220, 202);
             this.rbtnGroup.TabIndex = 2;
             this.rbtnGroup.TabStop = false;
             this.rbtnGroup.Text = "Machine Type";
-            // 
-            // businessRbtn
-            // 
-            this.businessRbtn.AutoSize = true;
-            this.businessRbtn.Location = new System.Drawing.Point(7, 46);
-            this.businessRbtn.Name = "businessRbtn";
-            this.businessRbtn.Size = new System.Drawing.Size(86, 21);
-            this.businessRbtn.TabIndex = 0;
-            this.businessRbtn.TabStop = true;
-            this.businessRbtn.Text = "Business";
-            this.businessRbtn.UseVisualStyleBackColor = true;
-            // 
-            // MultiRbtn
-            // 
-            this.MultiRbtn.AutoSize = true;
-            this.MultiRbtn.Location = new System.Drawing.Point(7, 90);
-            this.MultiRbtn.Name = "MultiRbtn";
-            this.MultiRbtn.Size = new System.Drawing.Size(96, 21);
-            this.MultiRbtn.TabIndex = 1;
-            this.MultiRbtn.TabStop = true;
-            this.MultiRbtn.Text = "Multimedia";
-            this.MultiRbtn.UseVisualStyleBackColor = true;
             // 
             // gmaeRbtn
             // 
@@ -101,11 +81,44 @@
             this.gmaeRbtn.Text = "Gaming";
             this.gmaeRbtn.UseVisualStyleBackColor = true;
             // 
+            // MultiRbtn
+            // 
+            this.MultiRbtn.AutoSize = true;
+            this.MultiRbtn.Location = new System.Drawing.Point(7, 90);
+            this.MultiRbtn.Name = "MultiRbtn";
+            this.MultiRbtn.Size = new System.Drawing.Size(96, 21);
+            this.MultiRbtn.TabIndex = 1;
+            this.MultiRbtn.TabStop = true;
+            this.MultiRbtn.Text = "Multimedia";
+            this.MultiRbtn.UseVisualStyleBackColor = true;
+            // 
+            // businessRbtn
+            // 
+            this.businessRbtn.AutoSize = true;
+            this.businessRbtn.Location = new System.Drawing.Point(7, 46);
+            this.businessRbtn.Name = "businessRbtn";
+            this.businessRbtn.Size = new System.Drawing.Size(86, 21);
+            this.businessRbtn.TabIndex = 0;
+            this.businessRbtn.TabStop = true;
+            this.businessRbtn.Text = "Business";
+            this.businessRbtn.UseVisualStyleBackColor = true;
+            // 
+            // laptopRbtn
+            // 
+            this.laptopRbtn.AutoSize = true;
+            this.laptopRbtn.Location = new System.Drawing.Point(7, 175);
+            this.laptopRbtn.Name = "laptopRbtn";
+            this.laptopRbtn.Size = new System.Drawing.Size(73, 21);
+            this.laptopRbtn.TabIndex = 3;
+            this.laptopRbtn.TabStop = true;
+            this.laptopRbtn.Text = "Laptop";
+            this.laptopRbtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 294);
+            this.ClientSize = new System.Drawing.Size(672, 307);
             this.Controls.Add(this.rbtnGroup);
             this.Controls.Add(this.printSpecsBtn);
             this.Controls.Add(this.displaySpecBox);
@@ -125,6 +138,7 @@
         private System.Windows.Forms.RadioButton gmaeRbtn;
         private System.Windows.Forms.RadioButton MultiRbtn;
         private System.Windows.Forms.RadioButton businessRbtn;
+        private System.Windows.Forms.RadioButton laptopRbtn;
     }
 }
 

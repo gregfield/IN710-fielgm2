@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ComputerBuilder
 {
-    public interface IComponentFactory
+    public class Monitor : Components
     {
-        CPU makeCPU();
-        GPU makeGPU();
-        RAM makeRam();
-        Monitor makeMonitor();
     }
 }

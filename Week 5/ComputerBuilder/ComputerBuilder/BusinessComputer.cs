@@ -31,4 +31,12 @@ namespace ComputerBuilder
             name = "4GB DDR3 RAM";
         }
     }
+    public class BusinessMonitor : Monitor
+    {
+        public BusinessMonitor()
+        {
+            price = 150;
+            name = "23 inch full hd";
+        }
+    }
 }

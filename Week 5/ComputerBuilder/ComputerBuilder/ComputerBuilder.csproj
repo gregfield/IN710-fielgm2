@@ -57,6 +57,8 @@
     <Compile Include="GamingComputer.cs" />
     <Compile Include="GPU.cs" />
     <Compile Include="IComponentFactory.cs" />
+    <Compile Include="Laptop.cs" />
+    <Compile Include="Monitor.cs" />
     <Compile Include="MultimediaComputer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
