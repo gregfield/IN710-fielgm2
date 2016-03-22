@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BycycleSubjectObserver", "BycycleSubjectObserver\BycycleSubjectObserver.csproj", "{DC46A30A-9229-4DA9-B108-99C6888F25A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC46A30A-9229-4DA9-B108-99C6888F25A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC46A30A-9229-4DA9-B108-99C6888F25A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC46A30A-9229-4DA9-B108-99C6888F25A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC46A30A-9229-4DA9-B108-99C6888F25A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
