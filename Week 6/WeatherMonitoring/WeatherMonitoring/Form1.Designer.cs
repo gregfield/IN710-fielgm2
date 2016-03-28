@@ -38,9 +38,9 @@
             this.temp2Lbl = new System.Windows.Forms.Label();
             this.humidity2Lbl = new System.Windows.Forms.Label();
             this.baro2Lbl = new System.Windows.Forms.Label();
-            this.tempListBox = new System.Windows.Forms.ListBox();
-            this.humidityListBox = new System.Windows.Forms.ListBox();
-            this.baroListBox = new System.Windows.Forms.ListBox();
+            this.currListBox = new System.Windows.Forms.ListBox();
+            this.averageListBox = new System.Windows.Forms.ListBox();
+            this.forecastListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // updateBtn
@@ -107,64 +107,64 @@
             this.temp2Lbl.AutoSize = true;
             this.temp2Lbl.Location = new System.Drawing.Point(362, 43);
             this.temp2Lbl.Name = "temp2Lbl";
-            this.temp2Lbl.Size = new System.Drawing.Size(113, 17);
+            this.temp2Lbl.Size = new System.Drawing.Size(102, 17);
             this.temp2Lbl.TabIndex = 7;
-            this.temp2Lbl.Text = "Temperature (C)";
+            this.temp2Lbl.Text = "Current Values";
             // 
             // humidity2Lbl
             // 
             this.humidity2Lbl.AutoSize = true;
             this.humidity2Lbl.Location = new System.Drawing.Point(362, 214);
             this.humidity2Lbl.Name = "humidity2Lbl";
-            this.humidity2Lbl.Size = new System.Drawing.Size(96, 17);
+            this.humidity2Lbl.Size = new System.Drawing.Size(125, 17);
             this.humidity2Lbl.TabIndex = 8;
-            this.humidity2Lbl.Text = "Humididty (%)";
+            this.humidity2Lbl.Text = "Average Readings";
             // 
             // baro2Lbl
             // 
             this.baro2Lbl.AutoSize = true;
             this.baro2Lbl.Location = new System.Drawing.Point(362, 384);
             this.baro2Lbl.Name = "baro2Lbl";
-            this.baro2Lbl.Size = new System.Drawing.Size(137, 17);
+            this.baro2Lbl.Size = new System.Drawing.Size(63, 17);
             this.baro2Lbl.TabIndex = 9;
-            this.baro2Lbl.Text = "Barometric Pressure";
+            this.baro2Lbl.Text = "Forecast";
             this.baro2Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tempListBox
+            // currListBox
             // 
-            this.tempListBox.FormattingEnabled = true;
-            this.tempListBox.ItemHeight = 16;
-            this.tempListBox.Location = new System.Drawing.Point(365, 77);
-            this.tempListBox.Name = "tempListBox";
-            this.tempListBox.Size = new System.Drawing.Size(491, 116);
-            this.tempListBox.TabIndex = 10;
+            this.currListBox.FormattingEnabled = true;
+            this.currListBox.ItemHeight = 16;
+            this.currListBox.Location = new System.Drawing.Point(365, 77);
+            this.currListBox.Name = "currListBox";
+            this.currListBox.Size = new System.Drawing.Size(491, 116);
+            this.currListBox.TabIndex = 10;
             // 
-            // humidityListBox
+            // averageListBox
             // 
-            this.humidityListBox.FormattingEnabled = true;
-            this.humidityListBox.ItemHeight = 16;
-            this.humidityListBox.Location = new System.Drawing.Point(365, 250);
-            this.humidityListBox.Name = "humidityListBox";
-            this.humidityListBox.Size = new System.Drawing.Size(491, 116);
-            this.humidityListBox.TabIndex = 11;
+            this.averageListBox.FormattingEnabled = true;
+            this.averageListBox.ItemHeight = 16;
+            this.averageListBox.Location = new System.Drawing.Point(365, 250);
+            this.averageListBox.Name = "averageListBox";
+            this.averageListBox.Size = new System.Drawing.Size(491, 116);
+            this.averageListBox.TabIndex = 11;
             // 
-            // baroListBox
+            // forecastListBox
             // 
-            this.baroListBox.FormattingEnabled = true;
-            this.baroListBox.ItemHeight = 16;
-            this.baroListBox.Location = new System.Drawing.Point(365, 422);
-            this.baroListBox.Name = "baroListBox";
-            this.baroListBox.Size = new System.Drawing.Size(491, 116);
-            this.baroListBox.TabIndex = 12;
+            this.forecastListBox.FormattingEnabled = true;
+            this.forecastListBox.ItemHeight = 16;
+            this.forecastListBox.Location = new System.Drawing.Point(365, 422);
+            this.forecastListBox.Name = "forecastListBox";
+            this.forecastListBox.Size = new System.Drawing.Size(491, 116);
+            this.forecastListBox.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 562);
-            this.Controls.Add(this.baroListBox);
-            this.Controls.Add(this.humidityListBox);
-            this.Controls.Add(this.tempListBox);
+            this.Controls.Add(this.forecastListBox);
+            this.Controls.Add(this.averageListBox);
+            this.Controls.Add(this.currListBox);
             this.Controls.Add(this.baro2Lbl);
             this.Controls.Add(this.humidity2Lbl);
             this.Controls.Add(this.temp2Lbl);
@@ -194,9 +194,9 @@
         private System.Windows.Forms.Label temp2Lbl;
         private System.Windows.Forms.Label humidity2Lbl;
         private System.Windows.Forms.Label baro2Lbl;
-        private System.Windows.Forms.ListBox tempListBox;
-        private System.Windows.Forms.ListBox humidityListBox;
-        private System.Windows.Forms.ListBox baroListBox;
+        private System.Windows.Forms.ListBox currListBox;
+        private System.Windows.Forms.ListBox averageListBox;
+        private System.Windows.Forms.ListBox forecastListBox;
     }
 }
 

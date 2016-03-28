@@ -20,6 +20,8 @@ namespace WeatherMonitoring
             currcomputedtemp = currtemp;
             currcomputedhumidity = currhumidity;
             currcomputedbaroPressure = currbaroPressure;
+
+            display();
         }
     }
 }

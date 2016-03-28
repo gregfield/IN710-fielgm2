@@ -9,12 +9,28 @@ namespace WeatherMonitoring
 {
     public class ForecastObserver : WeatherMonitoringObserver
     {
+        private string forecast;
         public ForecastObserver(ListBox displayBox, WeatherMonitoringSubject subject) : base(displayBox,subject)
         {}
 
         public override void update(int currTemp, int currHumidity, int currBaroPressure)
         {
-            throw new NotImplementedException();
+            if(currHumidity < 80)
+            {
+                forecast = "No Rain";
+            }
+            else
+            {
+                forecast = "Rain";
+            }
+
+            display();
+        }
+
+        public override void display()
+        {
+            displayListBox.Items.Clear();
+            displayListBox.Items.Add(forecast);
         }
     }
 }

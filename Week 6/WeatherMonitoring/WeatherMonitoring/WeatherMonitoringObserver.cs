@@ -38,7 +38,7 @@ namespace WeatherMonitoring
             displayListBox.Items.Clear();
             displayListBox.Items.Add("Temperature: \t" + currcomputedtemp.ToString("F2"));
             displayListBox.Items.Add("Humidity: \t" + currcomputedhumidity.ToString("F2"));
-            displayListBox.Items.Add("Pressure \t" + currcomputedbaroPressure.ToString("F2"));
+            displayListBox.Items.Add("Pressure: \t" + currcomputedbaroPressure.ToString("F2"));
         }
     }
 }
