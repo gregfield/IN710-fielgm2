@@ -8,7 +8,7 @@ namespace WeatherMonitoring
 {
     public interface IWeatherObserver
     {
-        void update(int data0, int data1, int data2);
+        void update(int currTemp, int currHumidity, int currBaroPressure);
         void display();
     }
 }
