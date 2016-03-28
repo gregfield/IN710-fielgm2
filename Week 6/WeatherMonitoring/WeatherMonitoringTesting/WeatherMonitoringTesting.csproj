@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>bdc29629-8df7-4eb8-abbd-7e9dd14a6ee0</ProjectGuid>
+    <ProjectGuid>{1C34009C-0A5E-413F-BFD5-15F68FFD2918}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WeatherMonitoringTesting</RootNamespace>
@@ -52,6 +52,12 @@
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeatherMonitoring\WeatherMonitoring.csproj">
+      <Project>{a9840224-b9c5-4231-bd52-5f6c578aa64e}</Project>
+      <Name>WeatherMonitoring</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

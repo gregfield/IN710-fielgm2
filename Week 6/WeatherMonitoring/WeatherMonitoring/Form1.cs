@@ -26,19 +26,19 @@ namespace WeatherMonitoring
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            int temp = 0;
-            int humidity = 0;
-            int pressure = 0;
+            double temp = 0;
+            double humidity = 0;
+            double pressure = 0;
 
             try
             {
-                temp = Int32.Parse(tempTxtBox.Text.ToString());
-                humidity = Int32.Parse(humidityTxtBox.Text.ToString());
-                pressure = Int32.Parse(baroTxtBox.Text.ToString());
+                temp = double.Parse(tempTxtBox.Text.ToString());
+                humidity = double.Parse(humidityTxtBox.Text.ToString());
+                pressure = double.Parse(baroTxtBox.Text.ToString());
 
                 if ((temp < -100) || (temp > 65))
                 {
-                    MessageBox.Show("Please enter a correct Temperature");
+                    MessageBox.Show("Please enter a valid Temperature");
                 }
                 else
                 {
@@ -51,10 +51,9 @@ namespace WeatherMonitoring
                         weatherSubject.Currtemp = temp;
                         weatherSubject.Currhumidity = humidity;
                         weatherSubject.CurrbaroPressure = pressure;
+                        weatherSubject.notifyObservers();
                     }
                 }
-
-                weatherSubject.notifyObservers();
             }
             catch(FormatException)
             {

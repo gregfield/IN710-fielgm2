@@ -9,10 +9,10 @@ namespace WeatherMonitoring
 {
     public class AverageObserver : WeatherMonitoringObserver
     {
-        private int temptotal;
-        private int humiditytotal;
-        private int pressuretotal;
-        private int numberOfReadings;
+        private double temptotal;
+        private double humiditytotal;
+        private double pressuretotal;
+        private double numberOfReadings;
 
         public AverageObserver(ListBox displayBox, WeatherMonitoringSubject subject) : base(displayBox,subject)
         {
@@ -22,7 +22,7 @@ namespace WeatherMonitoring
             numberOfReadings = 0;
         }
 
-        public override void update(int currTemp, int currHumidity, int currBaroPressure)
+        public override void update(double currTemp, double currHumidity, double currBaroPressure)
         {
             numberOfReadings++;
 

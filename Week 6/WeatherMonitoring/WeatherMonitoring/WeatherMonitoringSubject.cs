@@ -9,9 +9,9 @@ namespace WeatherMonitoring
     public class WeatherMonitoringSubject : IWeatherSubject
     {
         private List<IWeatherObserver> weatherObserverList;
-        private int currtemp;
-        private int currhumidity;
-        private int currbaroPressure;
+        private double currtemp;
+        private double currhumidity;
+        private double currbaroPressure;
 
         public WeatherMonitoringSubject()
         {   
@@ -40,17 +40,17 @@ namespace WeatherMonitoring
             }
         }
 
-        public int Currtemp
+        public double Currtemp
         {
             get { return currtemp; }
             set { currtemp = value; }
         }
-        public int Currhumidity
+        public double Currhumidity
         {
             get { return currhumidity; }
             set { currhumidity = value; }
         }
-        public int CurrbaroPressure
+        public double CurrbaroPressure
         {
             get { return currbaroPressure; }
             set { currbaroPressure = value; }

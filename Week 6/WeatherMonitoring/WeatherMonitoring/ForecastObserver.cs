@@ -13,7 +13,7 @@ namespace WeatherMonitoring
         public ForecastObserver(ListBox displayBox, WeatherMonitoringSubject subject) : base(displayBox,subject)
         {}
 
-        public override void update(int currTemp, int currHumidity, int currBaroPressure)
+        public override void update(double currTemp, double currHumidity, double currBaroPressure)
         {
             if(currHumidity < 80)
             {

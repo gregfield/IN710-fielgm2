@@ -10,9 +10,9 @@ namespace WeatherMonitoring
     public abstract class WeatherMonitoringObserver : IWeatherObserver
     {
         protected ListBox displayListBox;
-        protected int currtemp;
-        protected int currhumidity;
-        protected int currbaroPressure;
+        protected double currtemp;
+        protected double currhumidity;
+        protected double currbaroPressure;
         protected double currcomputedtemp;
         protected double currcomputedhumidity;
         protected double currcomputedbaroPressure;
@@ -31,7 +31,7 @@ namespace WeatherMonitoring
             weatherSubject.addWeatherObserver(this);
         }
 
-        public abstract void update(int currTemp, int currHumidity, int currBaroPressure);
+        public abstract void update(double currTemp, double currHumidity, double currBaroPressure);
 
         public virtual void display()
         {
