@@ -26,7 +26,9 @@ namespace QuizNightScorer
             if (kidsRbtn.Checked)
                 scoreComputer = new ScoreDelegate(Scorers.Children);
 
-            scoreLbl.Text = "Score = " + scoreComputer(Convert.ToInt32(correctTxtBox.Text.ToString()), Convert.ToInt32(incorrectTxtBox.Text.ToString())).ToString();
+            string score = scoreComputer(Convert.ToInt32(correctTxtBox.Text.ToString()), Convert.ToInt32(incorrectTxtBox.Text.ToString())).ToString();
+
+            scoreLbl.Text = "Score = " + score;
         }
     }
 }
