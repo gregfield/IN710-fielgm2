@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E75650B-2C4B-40A6-88C7-26A549473389}</ProjectGuid>
+    <ProjectGuid>{71E6AE5B-DC6B-4ACE-9DEF-5CB279BA013F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GardenReporter2016</RootNamespace>
-    <AssemblyName>GardenReporter2016</AssemblyName>
+    <RootNamespace>PredicateDelegate</RootNamespace>
+    <AssemblyName>PredicateDelegate</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -50,8 +50,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Garden.cs" />
-    <Compile Include="GardenManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

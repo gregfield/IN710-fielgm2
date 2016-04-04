@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace GardenReporter2016
 {
+    public delegate String GardensDelegate(Garden garden);
+
     public partial class Form1 : Form
     {
         GardenManager gardenManager;
@@ -20,7 +22,7 @@ namespace GardenReporter2016
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gardenManager = new GardenManager();
+            gardenManager = new GardenManager(listBox1);
             populateDummyData();
         }
 
@@ -47,12 +49,12 @@ namespace GardenReporter2016
 
         private void btnArea_Click(object sender, EventArgs e)
         {
-            /* YOUR CODE HERE */
+            gardenManager.ProcessGardens(new GardensDelegate(gardenManager.AreaReport));
         }
 
         private void btnCharges_Click(object sender, EventArgs e)
         {
-            /* YOUR CODE HERE */
+            gardenManager.ProcessGardens(new GardensDelegate(gardenManager.ChargesReport));
         }
     }
 }
