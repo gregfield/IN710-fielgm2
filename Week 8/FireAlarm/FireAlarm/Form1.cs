@@ -17,8 +17,8 @@ namespace FireAlarm
         {
             InitializeComponent();
             fireSubject = new FireAlarmSubject();
-            new AlarmObserver(fireSubject);
             new InstructionsObserver(fireSubject);
+            new AlarmObserver(fireSubject);
         }
 
         private void fireAlarmBtn_Click(object sender, EventArgs e)
