@@ -18,10 +18,15 @@ namespace PetrolBots
         private Point botStartingLocation;
         private Point shipLocation;
 
-        public PetrolBot(Graphics canvas)
+        public PetrolBot(Graphics canvas, Point startingLocation, Ship botShip)
         {
             botCanvas = canvas;
             botColor = Color.Purple;
+            botStartingLocation = startingLocation;
+            this.botShip = botShip;
+
+            botShip.FullOfFuelEvent += new EventHandler(fullOfFuelEventHandler);
+            botShip.OutOfFuelEvent += new OutOfFuelEventHandler(outOfFuelEventHandler);
         }
 
         public void drawBot()
@@ -30,10 +35,14 @@ namespace PetrolBots
             botCanvas.FillEllipse(colour, 100, 100, BOTSIZE, BOTSIZE);
         }
 
-        public void FullOfFuelEventHandler()
-        { }
+        public void fullOfFuelEventHandler(object o, EventArgs args)
+        {
+            botCurrentLocation = botStartingLocation;
+        }
 
-        public void OutOfFuelEventHandler()
-        { }
+        public void outOfFuelEventHandler(object o, ShipEventArgs args)
+        {
+            botCurrentLocation = args.ShipLocation;
+        }
     }
 }

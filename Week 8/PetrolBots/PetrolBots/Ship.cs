@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace PetrolBots
 {
-    public delegate void FullOfFuelEventHandler(object o, ShipEventArgs se);
     public delegate void OutOfFuelEventHandler(object o, ShipEventArgs se);
 
     public enum EShipState { wandering, refueling };
     public class Ship
     {
-        public event FullOfFuelEventHandler FullOfFuelEvent;
+        public event EventHandler FullOfFuelEvent;
         public event OutOfFuelEventHandler OutOfFuelEvent;
 
         private const int SHIPSIZE = 50;
@@ -30,14 +30,15 @@ namespace PetrolBots
 
         public Ship(Graphics canvas, Rectangle bounds)
         {
-            this.bounds = bounds;
-            petrol = 100;
-            velocity = 50;
             rGen = new Random();
+            this.bounds = bounds;
+            this.bounds.Y -= 50;
+            petrol = 100;
+            velocity = rGen.Next(10,50);
             shipCanvas = canvas;
             shipColor = Color.Red;
-            shipLocation.X = rGen.Next(bounds.Width);
-            shipLocation.Y = rGen.Next(bounds.Height);
+            shipLocation.X = rGen.Next(bounds.X);
+            shipLocation.Y = rGen.Next(bounds.Y);
         }
 
         public void drawShip()
@@ -49,43 +50,80 @@ namespace PetrolBots
 
         public void moveShip()
         {
-            if(shipLocation.X++ < bounds.X )
+            if(shipState == EShipState.wandering)
             {
-                shipLocation.X = shipLocation.X + velocity;
-            }
-            if (shipLocation.Y++ < bounds.Y)
-            {
-                shipLocation.Y = shipLocation.Y + velocity;
-            }
-            usePetrol();
+                shipLocation.X += velocity;
+                shipLocation.Y += velocity;
+
+                if ((shipLocation.X <= bounds.Left) || ((shipLocation.X + SHIPSIZE) >= bounds.Right) || (shipLocation.Y <= bounds.Top) || ((shipLocation.Y + SHIPSIZE) >= bounds.Bottom))
+                {
+                    velocity *= -1;
+                }
+            }                
         }
 
         public void OnFullOfFuelEvent()
-        { }
+        {
+            EventArgs shipEvent = new EventArgs();
+            if(FullOfFuelEvent != null)
+            {
+                FullOfFuelEvent(this, shipEvent);
+            }
+        }
 
         public void OnOutOfFuelEvent()
-        { }
+        {
+            ShipEventArgs shipEvent = new ShipEventArgs(shipLocation);
+            if(OutOfFuelEvent != null)
+            {
+                OutOfFuelEvent(this, shipEvent);
+            }
+        }
 
         public void refuel()
-        { }
+        { 
+            do
+            {
+                petrol += 5;
+                shipColor = Color.FromArgb(255 / 100 * petrol, 0, 0);
+                drawShip();
+                Thread.Sleep(100);
+            }while (petrol != 100);
+
+            OnFullOfFuelEvent();
+            shipState = EShipState.wandering;
+        }
 
         public void ShipCycle()
         {
-            drawShip();
-            moveShip();
-            usePetrol();
+            if (shipState == EShipState.wandering)
+            {
+                moveShip();
+                drawShip();
+                usePetrol();
+                shipColor = Color.FromArgb(255 * petrol / 100, 0, 0);
+            }
+            else if(shipState == EShipState.refueling)
+            {
+                refuel();
+            }
+
+            ////change the colour
+            //if ((petrol % 5) == 0)
+            //{
+                
+            //}
         }
 
         public void usePetrol()
         {
             petrol--;
-            int colour = 255;
-            
-            if((petrol % 5) == 0)
+
+            if(petrol <= 0)
             {
-                colour = colour - 30;
-                //shipColor = Color.FromArgb(colour, 0, 0);
-                shipColor = ControlPaint.Dark(shipColor);
+                OnOutOfFuelEvent();
+                shipState = EShipState.refueling;
+
             }
         }
 

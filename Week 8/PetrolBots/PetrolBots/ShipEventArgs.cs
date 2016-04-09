@@ -11,7 +11,10 @@ namespace PetrolBots
     {
         private Point shipLocation;
 
-
+        public ShipEventArgs(Point shipLocation)
+        {
+            this.shipLocation = shipLocation;
+        }
 
         public Point ShipLocation
         {
