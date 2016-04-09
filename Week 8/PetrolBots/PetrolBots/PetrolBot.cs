@@ -32,7 +32,7 @@ namespace PetrolBots
         public void drawBot()
         {
             SolidBrush colour = new SolidBrush(botColor);
-            botCanvas.FillEllipse(colour, 100, 100, BOTSIZE, BOTSIZE);
+            botCanvas.FillEllipse(colour, botStartingLocation.X, botStartingLocation.Y, BOTSIZE, BOTSIZE);
         }
 
         public void fullOfFuelEventHandler(object o, EventArgs args)

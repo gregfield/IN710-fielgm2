@@ -32,7 +32,6 @@ namespace PetrolBots
         {
             rGen = new Random();
             this.bounds = bounds;
-            this.bounds.Y -= 50;
             petrol = 100;
             velocity = rGen.Next(10,50);
             shipCanvas = canvas;
@@ -42,8 +41,7 @@ namespace PetrolBots
         }
 
         public void drawShip()
-        {
-            shipCanvas.Clear(Color.Blue);  
+        { 
             SolidBrush colour = new SolidBrush(shipColor);
             shipCanvas.FillRectangle(colour, shipLocation.X, shipLocation.Y, SHIPSIZE, SHIPSIZE);
         }
@@ -55,7 +53,7 @@ namespace PetrolBots
                 shipLocation.X += velocity;
                 shipLocation.Y += velocity;
 
-                if ((shipLocation.X <= bounds.Left) || ((shipLocation.X + SHIPSIZE) >= bounds.Right) || (shipLocation.Y <= bounds.Top) || ((shipLocation.Y + SHIPSIZE) >= bounds.Bottom))
+                if ((shipLocation.X <= bounds.Left) || (shipLocation.X  >= bounds.Right) || (shipLocation.Y <= bounds.Top) || ((shipLocation.Y + SHIPSIZE) >= bounds.Bottom))
                 {
                     velocity *= -1;
                 }
@@ -107,12 +105,6 @@ namespace PetrolBots
             {
                 refuel();
             }
-
-            ////change the colour
-            //if ((petrol % 5) == 0)
-            //{
-                
-            //}
         }
 
         public void usePetrol()
