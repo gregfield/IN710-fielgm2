@@ -20,7 +20,8 @@ namespace PetrolBots
         private const int SHIPSIZE = 50;
 
         private int petrol;
-        private int velocity;
+        private int velocityX;
+        private int velocityY;
         private Random rGen;
         private Graphics shipCanvas;
         private Rectangle bounds;
@@ -33,11 +34,13 @@ namespace PetrolBots
             rGen = new Random();
             this.bounds = bounds;
             petrol = 100;
-            velocity = rGen.Next(10,50);
+            shipLocation.X = rGen.Next(bounds.Width);
+            shipLocation.Y = rGen.Next(bounds.Height);
+            velocityX = rGen.Next(10, 50);
+            velocityY = rGen.Next(10, 50);
             shipCanvas = canvas;
             shipColor = Color.Red;
-            shipLocation.X = rGen.Next(bounds.X);
-            shipLocation.Y = rGen.Next(bounds.Y);
+
         }
 
         public void drawShip()
@@ -50,12 +53,16 @@ namespace PetrolBots
         {
             if(shipState == EShipState.wandering)
             {
-                shipLocation.X += velocity;
-                shipLocation.Y += velocity;
+                shipLocation.X += velocityX;
+                shipLocation.Y += velocityY;
 
-                if ((shipLocation.X <= bounds.Left) || (shipLocation.X  >= bounds.Right) || (shipLocation.Y <= bounds.Top) || ((shipLocation.Y + SHIPSIZE) >= bounds.Bottom))
+                if ((shipLocation.X <= bounds.Left) || (shipLocation.X  >= bounds.Right - SHIPSIZE))
                 {
-                    velocity *= -1;
+                    velocityX *= -1;
+                }
+                else if ((shipLocation.Y <= bounds.Top) || ((shipLocation.Y + SHIPSIZE) >= bounds.Bottom))
+                {
+                    velocityY *= -1;
                 }
             }                
         }
@@ -79,17 +86,18 @@ namespace PetrolBots
         }
 
         public void refuel()
-        { 
-            do
+        {
+            if (petrol != 100)
             {
                 petrol += 5;
                 shipColor = Color.FromArgb(255 / 100 * petrol, 0, 0);
                 drawShip();
-                Thread.Sleep(100);
-            }while (petrol != 100);
-
-            OnFullOfFuelEvent();
-            shipState = EShipState.wandering;
+            }
+            else
+            {
+                OnFullOfFuelEvent();
+                shipState = EShipState.wandering;
+            }
         }
 
         public void ShipCycle()

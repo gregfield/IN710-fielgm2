@@ -31,7 +31,7 @@ namespace PetrolBots
             shipList = new List<Ship>();
             botList = new List<PetrolBot>();
             canvas = CreateGraphics();
-            shipBounds = new Rectangle(0, 0, Width, Height - 100);
+            shipBounds = new Rectangle(0, 0, Width - 20, Height - 100);
             botStartLocation.X = 20; 
             botStartLocation.Y = Height - 70; 
 
@@ -47,7 +47,8 @@ namespace PetrolBots
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            canvas.Clear(Color.Blue); 
+            canvas.Clear(Color.Blue);
+            canvas.DrawLine(Pens.Black, 0, Height - 90, Width, Height - 90);
 
             for(int i = 0; i < shipList.Count; i++)
             {
