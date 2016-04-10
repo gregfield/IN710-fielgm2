@@ -34,8 +34,7 @@ namespace PetrolBots
             this.rGen = rGen;
             this.bounds = bounds;
             petrol = 100;
-            shipLocation.X = rGen.Next(bounds.Width);
-            shipLocation.Y = rGen.Next(bounds.Height);
+            shipLocation = new Point(rGen.Next(bounds.Width - SHIPSIZE), rGen.Next(bounds.Height - SHIPSIZE));
             velocityX = rGen.Next(10, 40);
             velocityY = rGen.Next(10, 40);
             shipCanvas = canvas;
@@ -55,11 +54,11 @@ namespace PetrolBots
                 shipLocation.X += velocityX;
                 shipLocation.Y += velocityY;
 
-                if ((shipLocation.X < bounds.Left) || (shipLocation.X  > bounds.Right - SHIPSIZE))
+                if ((shipLocation.X < bounds.Left) || ((shipLocation.X + SHIPSIZE)  > bounds.Right))
                 {
                     velocityX *= -1;
                 }
-                else if ((shipLocation.Y <= bounds.Top) || ((shipLocation.Y + SHIPSIZE) >= bounds.Bottom))
+                else if ((shipLocation.Y < bounds.Top) || ((shipLocation.Y + SHIPSIZE) > bounds.Bottom))
                 {
                     velocityY *= -1;
                 }

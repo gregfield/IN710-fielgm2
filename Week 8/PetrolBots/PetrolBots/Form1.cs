@@ -33,7 +33,7 @@ namespace PetrolBots
             botList = new List<PetrolBot>();
             canvas = CreateGraphics();
             rGen = new Random();
-            shipBounds = new Rectangle(0, 0, Width - 20, Height - 100);
+            shipBounds = new Rectangle(0, 0, Width, Height - 100);
             botStartLocation.X = 20; 
             botStartLocation.Y = Height - 70; 
 
