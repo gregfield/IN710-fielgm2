@@ -20,6 +20,7 @@ namespace PetrolBots
         List<Ship> shipList;
         List<PetrolBot> botList;
         Point botStartLocation;
+        Random rGen;
 
         public Form1()
         {
@@ -31,13 +32,14 @@ namespace PetrolBots
             shipList = new List<Ship>();
             botList = new List<PetrolBot>();
             canvas = CreateGraphics();
+            rGen = new Random();
             shipBounds = new Rectangle(0, 0, Width - 20, Height - 100);
             botStartLocation.X = 20; 
             botStartLocation.Y = Height - 70; 
 
             for (int i = 0; i < NUMSHIPS; i++ )
             {
-                shipList.Add(new Ship(canvas, shipBounds));
+                shipList.Add(new Ship(canvas, shipBounds, rGen));
                 botList.Add(new PetrolBot(canvas, botStartLocation, shipList[i]));
                 botStartLocation.X += 20;
             }

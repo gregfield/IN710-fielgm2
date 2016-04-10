@@ -17,7 +17,7 @@ namespace PetrolBots
         public event EventHandler FullOfFuelEvent;
         public event OutOfFuelEventHandler OutOfFuelEvent;
 
-        private const int SHIPSIZE = 50;
+        private const int SHIPSIZE = 30;
 
         private int petrol;
         private int velocityX;
@@ -29,18 +29,17 @@ namespace PetrolBots
         private Point shipLocation;
         private EShipState shipState;
 
-        public Ship(Graphics canvas, Rectangle bounds)
+        public Ship(Graphics canvas, Rectangle bounds, Random rGen)
         {
-            rGen = new Random();
+
             this.bounds = bounds;
             petrol = 100;
-            shipLocation.X = rGen.Next(bounds.Width);
-            shipLocation.Y = rGen.Next(bounds.Height);
-            velocityX = rGen.Next(10, 50);
-            velocityY = rGen.Next(10, 50);
+            shipLocation.X = rGen.Next(bounds.Width - SHIPSIZE);
+            shipLocation.Y = rGen.Next(bounds.Height - SHIPSIZE);
+            velocityX = rGen.Next(10, 40);
+            velocityY = rGen.Next(10, 40);
             shipCanvas = canvas;
             shipColor = Color.Red;
-
         }
 
         public void drawShip()
@@ -93,7 +92,7 @@ namespace PetrolBots
                 shipColor = Color.FromArgb(255 / 100 * petrol, 0, 0);
                 drawShip();
             }
-            else
+            else 
             {
                 OnFullOfFuelEvent();
                 shipState = EShipState.wandering;
@@ -123,7 +122,6 @@ namespace PetrolBots
             {
                 OnOutOfFuelEvent();
                 shipState = EShipState.refueling;
-
             }
         }
 
