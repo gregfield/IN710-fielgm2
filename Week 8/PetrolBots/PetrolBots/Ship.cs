@@ -31,11 +31,11 @@ namespace PetrolBots
 
         public Ship(Graphics canvas, Rectangle bounds, Random rGen)
         {
-
+            this.rGen = rGen;
             this.bounds = bounds;
             petrol = 100;
-            shipLocation.X = rGen.Next(bounds.Width - SHIPSIZE);
-            shipLocation.Y = rGen.Next(bounds.Height - SHIPSIZE);
+            shipLocation.X = rGen.Next(bounds.Width);
+            shipLocation.Y = rGen.Next(bounds.Height);
             velocityX = rGen.Next(10, 40);
             velocityY = rGen.Next(10, 40);
             shipCanvas = canvas;
@@ -55,7 +55,7 @@ namespace PetrolBots
                 shipLocation.X += velocityX;
                 shipLocation.Y += velocityY;
 
-                if ((shipLocation.X <= bounds.Left) || (shipLocation.X  >= bounds.Right - SHIPSIZE))
+                if ((shipLocation.X < bounds.Left) || (shipLocation.X  > bounds.Right - SHIPSIZE))
                 {
                     velocityX *= -1;
                 }
@@ -88,7 +88,7 @@ namespace PetrolBots
         {
             if (petrol != 100)
             {
-                petrol += 5;
+                petrol++;
                 shipColor = Color.FromArgb(255 / 100 * petrol, 0, 0);
                 drawShip();
             }
