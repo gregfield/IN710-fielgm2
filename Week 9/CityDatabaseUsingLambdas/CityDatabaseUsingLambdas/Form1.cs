@@ -12,7 +12,7 @@ namespace CityDatabaseUsingLambdas
 {
     public partial class Form1 : Form
     {
-        Func<string, string, bool> findCities = (x,y) => x.Equals(y);
+        Func<string, List<City>, List<City>> findCities = (selectedCountry, cities) => cities.FindAll(City => selectedCountry.Equals(City.CountryName));
         List<City> cities;
         public Form1()
         {
@@ -25,19 +25,16 @@ namespace CityDatabaseUsingLambdas
         {
             string selectedCountry = textBox1.Text.ToString();
             List<City> foundCities = new List<City>();
-            foreach(City city in cities)
-            {
-                if (findCities(selectedCountry, city.CountryName))
-                {
-                    foundCities.Add(city);
-                }
-            }
+
+            foundCities = findCities(selectedCountry, cities);
 
             listBox1.Items.Clear();
             foreach(City city in foundCities)
             {
-                listBox1.Items.Add(String.Format("{0, -15} {1,-15} {2, -15}", city.CityName, city.CountryName, city.Population));
+                listBox1.Items.Add(String.Format("{0, -14}{1, -14}{2:n0}", city.CityName, city.CountryName, city.Population));
             }
+
+            textBox1.Text = "";
         }
 
         private void populateList()
@@ -49,8 +46,15 @@ namespace CityDatabaseUsingLambdas
             cities.Add(new City("Christchurch", "New Zealand", 228000));
             cities.Add(new City("Wellington", "New Zealand", 300000));
             cities.Add(new City("Florence", "Italy", 362000));
-            cities.Add(new City("Rome", "Italy", 27000000));
+            cities.Add(new City("Rome", "Italy", 2700000));
             cities.Add(new City("Venice", "Italy", 260000));
+        }
+
+        private void multiplyBtn_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            cities.ForEach(currentCity => currentCity.Population = currentCity.Population * 3);
+            cities.ForEach(currentCity => listBox1.Items.Add(String.Format("{0, -14}{1, -14}{2:n0}", currentCity.CityName, currentCity.CountryName, currentCity.Population)));
         }
     }
 }
