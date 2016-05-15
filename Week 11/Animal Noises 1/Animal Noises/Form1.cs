@@ -38,6 +38,11 @@ namespace Animal_Noises
             MessageBox.Show("It is a frog");
         }
 
+        private void stopBtn_Click(object sender, EventArgs e)
+        {
+            soundThread.Abort();
+        }
+
 
     }
 }

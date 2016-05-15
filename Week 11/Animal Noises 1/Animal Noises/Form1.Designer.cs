@@ -30,6 +30,7 @@
         {
             this.btnSpeak = new System.Windows.Forms.Button();
             this.btnWhat = new System.Windows.Forms.Button();
+            this.stopBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSpeak
@@ -52,16 +53,27 @@
             this.btnWhat.UseVisualStyleBackColor = true;
             this.btnWhat.Click += new System.EventHandler(this.btnWhat_Click);
             // 
+            // stopBtn
+            // 
+            this.stopBtn.Location = new System.Drawing.Point(49, 222);
+            this.stopBtn.Name = "stopBtn";
+            this.stopBtn.Size = new System.Drawing.Size(157, 43);
+            this.stopBtn.TabIndex = 2;
+            this.stopBtn.Text = "Stop Sound";
+            this.stopBtn.UseVisualStyleBackColor = true;
+            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(253, 234);
+            this.ClientSize = new System.Drawing.Size(253, 277);
+            this.Controls.Add(this.stopBtn);
             this.Controls.Add(this.btnWhat);
             this.Controls.Add(this.btnSpeak);
             this.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -73,6 +85,7 @@
 
         private System.Windows.Forms.Button btnSpeak;
         private System.Windows.Forms.Button btnWhat;
+        private System.Windows.Forms.Button stopBtn;
 
     }
 }
