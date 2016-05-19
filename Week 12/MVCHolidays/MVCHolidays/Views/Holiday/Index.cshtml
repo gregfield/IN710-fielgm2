@@ -1,0 +1,20 @@
+﻿@model MVCHolidays.Models.Holiday
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <p>There are @Model.daysUntilHoliday days until @Model.HolidayName</p>
+        <img src="@Model.HolidayImageFileName"/> 
+    </div>
+</body>
+</html>
