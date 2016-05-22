@@ -96,6 +96,7 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\DogSelect\ShowSelect.cshtml" />
+    <Content Include="Views\DogSelect\DogRecomendation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,7 +7,7 @@ namespace DogSelector.Models
 {
     public enum EScale { Low, Medium, High, NoPreference}
     public enum ELength { Short, Medium, Long}
-    public enum ESize { Small, Medium, Large}
+    public enum ESize { Miniature = 1, Small = 2, Medium = 3, Large = 4, Giant = 5}
 
     public class Dog
     {

@@ -1,0 +1,61 @@
+﻿@model DogSelector.Models.Dog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DogRecomendation</title>
+</head>
+<body>
+    <div> 
+        <h1>Our Recommendation:</h1>
+        <h2>We suggest the @Model.DisplayName</h2>
+        <br />
+        <img src="@Model.ImageName" />
+
+        <table>
+            <tr>
+                <td>Activity Level</td>
+                <td>@Model.ActivityLevel</td>
+            </tr>
+            <tr>
+                <td>Shedding Level</td>
+                <td>@Model.SheddingLevel</td>
+            </tr>
+            <tr>
+                <td>Grooming Level</td>
+                <td>@Model.GroomingLevel</td>
+            </tr>
+            <tr>
+                <td>Intelligence Level</td>
+                <td>@Model.IntelligenceLevel</td>
+            </tr>
+            <tr>
+                <td>Good With Children</td>
+                <td>@Model.GoodWithChildren</td>
+            </tr>
+            <tr>
+                <td>Drools</td>
+                <td>@Model.Drools</td>
+            </tr>
+            <tr>
+                <td>Coat Length</td>
+                <td>@Model.CoatLength</td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td>@Model.Size</td>
+            </tr>
+        </table>
+        <br />
+        <form>
+        <input type="submit" value="Choose Another Dog" />
+        </form>
+    </div>
+</body>
+</html>
