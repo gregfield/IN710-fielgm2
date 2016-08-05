@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UsersDb">
+  <DataContextMoniker Name="/UsersDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="da4ae31e-7196-4e3b-a04c-46f10740e2d2" absoluteBounds="6.125, 1.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/UsersDbDataContext/tblDislike" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b68ae96-e84c-431d-a92a-5c04d3d75c29" absoluteBounds="6.1400000000000006, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30588de9-15fe-417d-ab3d-1ce499561aef" absoluteBounds="1, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/UsersDbDataContext/tblLike" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bce822af-948c-4eaf-9c55-b00f1bbbe7e0" absoluteBounds="1.0150000000000001, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b121ce2e-3337-45cb-b2ff-af50d00ba7cb" absoluteBounds="3.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/UsersDbDataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bce09379-170c-49f3-9344-9e5dc2fd7206" absoluteBounds="3.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.17748052144222); (6.92183840215246 : 1.17748052144222); (6.92183840215246 : 1.875)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+      <AssociationMoniker Name="/UsersDbDataContext/tblUser/tblUser_tblDislike" />
+      <nodes>
+        <classShapeMoniker Id="b121ce2e-3337-45cb-b2ff-af50d00ba7cb" />
+        <classShapeMoniker Id="da4ae31e-7196-4e3b-a04c-46f10740e2d2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 1.1249995); (2 : 1.1249995); (2 : 1.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UsersDbDataContext/tblUser/tblUser_tblLike" />
+      <nodes>
+        <classShapeMoniker Id="b121ce2e-3337-45cb-b2ff-af50d00ba7cb" />
+        <classShapeMoniker Id="30588de9-15fe-417d-ab3d-1ce499561aef" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="659e9303-eb21-4ce0-ad20-2e1f6e6f01a8" absoluteBounds="3.5, 3.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/UsersDbDataContext/tblUserLikesDislike" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1c7e918-0a04-46c7-b2e0-08f825902570" absoluteBounds="3.515, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 3.2612939453125); (5.5 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UsersDbDataContext/tblDislike/tblDislike_tblUserLikesDislike" />
+      <nodes>
+        <classShapeMoniker Id="da4ae31e-7196-4e3b-a04c-46f10740e2d2" />
+        <classShapeMoniker Id="659e9303-eb21-4ce0-ad20-2e1f6e6f01a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 3.1362939453125); (3.5 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UsersDbDataContext/tblLike/tblLike_tblUserLikesDislike" />
+      <nodes>
+        <classShapeMoniker Id="30588de9-15fe-417d-ab3d-1ce499561aef" />
+        <classShapeMoniker Id="659e9303-eb21-4ce0-ad20-2e1f6e6f01a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.49152863661156 : 1.8862939453125); (4.49152863661156 : 3.625)]" fixedFrom="Caller" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UsersDbDataContext/tblUser/tblUser_tblUserLikesDislike" />
+      <nodes>
+        <classShapeMoniker Id="b121ce2e-3337-45cb-b2ff-af50d00ba7cb" />
+        <classShapeMoniker Id="659e9303-eb21-4ce0-ad20-2e1f6e6f01a8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

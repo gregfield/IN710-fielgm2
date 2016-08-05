@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IN700001_201601_FIELGM2" Class="UsersDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=bitdev.ict.op.ac.nz;Initial Catalog=IN700001_201601_FIELGM2;Persist Security Info=True;User ID=fielgm2" SettingsObjectName="fielgm2_WebNewsAggregator.Properties.Settings" SettingsPropertyName="IN700001_201601_FIELGM2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblDislikes" Member="tblDislikes">
+    <Type Name="tblDislike">
+      <Column Name="dislikeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dislike" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblDislike_tblUserLikesDislike" Member="tblUserLikesDislikes" ThisKey="dislikeID" OtherKey="dislikeID" Type="tblUserLikesDislike" />
+      <Association Name="tblUser_tblDislike" Member="tblUser" ThisKey="userID" OtherKey="userID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLikes" Member="tblLikes">
+    <Type Name="tblLike">
+      <Column Name="likeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="likes" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblLike_tblUserLikesDislike" Member="tblUserLikesDislikes" ThisKey="likeID" OtherKey="likeID" Type="tblUserLikesDislike" />
+      <Association Name="tblUser_tblLike" Member="tblUser" ThisKey="userID" OtherKey="userID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="userPassword" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Association Name="tblUser_tblDislike" Member="tblDislikes" ThisKey="userID" OtherKey="userID" Type="tblDislike" />
+      <Association Name="tblUser_tblLike" Member="tblLikes" ThisKey="userID" OtherKey="userID" Type="tblLike" />
+      <Association Name="tblUser_tblUserLikesDislike" Member="tblUserLikesDislikes" ThisKey="userID" OtherKey="userID" Type="tblUserLikesDislike" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserLikesDislikes" Member="tblUserLikesDislikes">
+    <Type Name="tblUserLikesDislike">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="likeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dislikeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblDislike_tblUserLikesDislike" Member="tblDislike" ThisKey="dislikeID" OtherKey="dislikeID" Type="tblDislike" IsForeignKey="true" />
+      <Association Name="tblLike_tblUserLikesDislike" Member="tblLike" ThisKey="likeID" OtherKey="likeID" Type="tblLike" IsForeignKey="true" />
+      <Association Name="tblUser_tblUserLikesDislike" Member="tblUser" ThisKey="userID" OtherKey="userID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
